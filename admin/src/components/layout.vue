@@ -15,6 +15,7 @@
 					router="router"
 					@select="handleSelect">
 					<el-menu-item index="/goods"> 商品 </el-menu-item>
+					<el-menu-item index="/order"> 订单 </el-menu-item>
 					<el-menu-item index="/users"> 用户 </el-menu-item>
 				</el-menu>
 			</el-aside>
@@ -38,7 +39,7 @@
 					<div class="main-nav">
 						<ul>
 							<li class="active">商品列表</li>
-							<li>商品属性</li>
+							<li>商品分类</li>
 							<li>优惠券</li>
 						</ul>
 					</div>
