@@ -1,0 +1,142 @@
+html{
+	height: 100%;
+}
+body{
+	height: 100%;
+	font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", SimSun, sans-serif;
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	-webkit-tap-highlight-color: transparent;
+	margin: 0px;
+	padding: 0px;
+	font-size : 14px;
+	color: #5b626b;
+	background-color: #f8f8f8;
+}
+.layout-aside{
+	background: #333547;
+	font-size: 12px;
+}
+.logo{
+	color:#00a99d;
+	height: 50px;
+	line-height: 50px;
+	font-size: 20px;
+	text-align: center;
+	border-bottom : 1px solid #00544e;
+}
+.layout-menu{
+	width: 120px;
+	border: none;
+}
+.layout-menu .el-menu-item{
+	height: 35px;
+	line-height: 35px;
+	padding-left: 10px !important;
+	text-align: center;
+}
+.layout-menu .el-menu-item.is-active{
+	background-color: #383b4e !important;
+}
+.layout-header{
+	background: #ececf1;
+	height: 50px;
+	line-height: 50px;
+}
+.layout-header .notify{
+	line-height: normal;
+	margin-right: 30px;
+}
+.layout-header .avatar{
+	vertical-align: middle;
+	margin-top: -7px;
+}
+.layout-header .notify .el-badge__content{
+	border: none;
+}
+.layout-header .el-icon-bell{
+	font-size : 20px;
+}
+.layout-header .el-breadcrumb{
+	line-height: 50px;
+}
+.layout-page-nav{
+	margin: 20px 0;
+}
+.main-nav{
+	margin-top: 0px;
+	height: 30px;
+}
+.main-nav li{
+	float: left;
+	line-height: 30px;
+	margin-right: 20px;
+	padding : 0 15px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.main-nav li.active{
+	color: #fff;
+	background: #626ed4;
+	cursor: default;
+}
+.main-nav li:hover{
+	background-color: #efefef;
+}
+.main-nav li.active:hover{
+	background: #626ed4;
+}
+.layout-main{
+	padding-top: 0;
+}
+.layout-pager{
+	margin-top: -30px;
+}
+.layout-pager .el-icon-plus:before{
+	content: "\e604";
+}
+.layout-pager .el-icon-minus:before{
+	content: "\e600";
+}
+/** 基础css **/
+.clearfix:before, 
+.clearfix:after { 
+    display: table; 
+    line-height: 0; 
+    content: ""; 
+} 
+.clearfix:after { 
+    clear: both; 
+} 
+.pull-left{
+	float: left;
+}
+.pull-right{
+	float: right;
+}
+.text-center{
+	text-align: center;
+}
+.text-left{
+	text-align: left;
+}
+.text-right{
+	text-align: right;
+}
+.ml20{
+	margin-left: 20px;
+}
+.mr20{
+	margin-right: 20px;
+}
+.mt20{
+	margin-top: 20px;
+}
+.mb20{
+	margin-bottom: 20px;
+}
+ul,li{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
