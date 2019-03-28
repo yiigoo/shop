@@ -18,6 +18,7 @@
 					
 			</el-table-column>
 		</el-table>
+		{{ textText }}
 	</div>
 </template>
 
@@ -33,6 +34,10 @@
 				type : Array ,
 				default : []
 			},
+			textText : {
+				type : Boolean ,
+				default : false
+			}
 		},
 		data() {
 			return {
