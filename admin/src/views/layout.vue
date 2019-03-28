@@ -28,10 +28,31 @@
 						</el-breadcrumb>
 					</div>
 					<div class="pull-right">
-						<el-badge :value="4" :max="9" class="notify">
+						<el-badge :value="4" :max="9" class="notify" v-popover:notify>
 							<i class="el-icon-bell"></i>
 						</el-badge>
-						<img class="avatar" src="../assets/avatar/avatar-5.png" alt="" height="30" />
+						<el-popover
+							ref="notify"
+							placement="bottom"
+							width="220"
+							trigger="click">
+							<div class="layout-notify-list">
+								<ul>
+									<li><a href="#"> 汕头吧 , 历史悠久，文化浓厚的潮汕大地欢迎你！</a></li>
+									<li><a href="#"> 汕头吧 , 历史悠久，文化浓厚的潮汕大地欢迎你！</a></li>
+									<li><a href="#"> 汕头吧 , 历史悠久，文化浓厚的潮汕大地欢迎你！</a></li>
+								</ul>
+							</div>
+						</el-popover>
+
+						<img class="avatar" src="../assets/avatar/avatar-5.png" alt="" height="30" v-popover:avatar />
+						<el-popover
+							ref="avatar"
+							placement="bottom"
+							width="120"
+							trigger="click">
+							<a href="" class="text-danger">退出登录</a>
+						</el-popover>
 					</div>
 					
 				</el-header>
