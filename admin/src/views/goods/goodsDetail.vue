@@ -28,6 +28,7 @@
 		},
 		data() {
 			return {
+				loading : false ,
 				form: {
 					name: '',
 					region: '',
@@ -43,10 +44,10 @@
 		methods: {
 			onSubmit() {
 
-			}
+			},
+			
 		},
 		created() {
-			console.log( this.test )
 		}
 	}
 </script>

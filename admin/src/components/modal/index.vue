@@ -54,7 +54,7 @@
 		},
 		beforeDestroy: function() {},
 		destroyed: function() {
-			document.body.removeChild(this.$el);
+			document.body.removeChild(this.$el)
 		}
 	}
 </script>

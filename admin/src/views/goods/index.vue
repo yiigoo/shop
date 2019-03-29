@@ -10,8 +10,6 @@
 			</div>
 		</el-header>
 
-		
-
 		<site-table
 			ref="table"
 			size="mini"
@@ -20,8 +18,8 @@
 			:text-text="true"
 			:tableData = "tableData">
 
-			<div slot="name" slot-scope="column">
-				<el-button type="primary" @click="show( column.scope.row.name )">{{ column.scope.row.name }}</el-button>
+			<div slot="_opt" size="mini" slot-scope="column">
+				<el-button type="primary" @click="show( column.scope.row.name )">修改</el-button>
 			</div>
 			<div slot="date" slot-scope="column">
 				<el-date-picker
@@ -40,7 +38,7 @@
 </template>
 
 <script>
-	import List from './list'
+	import goodsDetail from './goodsDetail'
 	export default {
 		name: 'Goods',
 		data() {
@@ -51,7 +49,8 @@
 				tableColumn : [
 					{
 						prop : 'name' ,
-						label : '名字' 
+						label : '名字' ,
+						width : '500'
 					},
 					{
 						prop : 'sex' ,
@@ -60,6 +59,10 @@
 					{
 						prop : 'date' ,
 						label : '日期' 
+					},
+					{
+						prop : '_opt' ,
+						label : '操作' 
 					}
 				]
 			}
@@ -67,9 +70,9 @@
 		
 		methods: {
 			show( name = '') {
-				new this.$modal( List , {
+				new this.$modal( goodsDetail , {
 					title : name ,
-					width : '90%' ,
+					width : '700px' ,
 					top : '0px' ,
 					'show-close' : true ,
 					props: {
@@ -85,28 +88,7 @@
 		created() {
 		},
 		mounted() {
-			setTimeout( ()=>{
-				let data = [{
-						name : '测试',
-						sex : '男' ,
-						date : '2019-01-21 00:00:44'
-					},
-					{
-						name : '测试2',
-						sex : '男2' ,
-						date : '2019-01-24 00:00:33'
-					},{
-						name : '测试3',
-						sex : '女' ,
-						date : '2019-01-21 00:00:44'
-					},
-					{
-						name : '测试4',
-						sex : '男2' ,
-						date : '2019-01-24 00:00:33'
-					}]
-				this.tableData = data
-			} , 3000)
+			
 		}
 	}
 </script>
