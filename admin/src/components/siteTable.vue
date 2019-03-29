@@ -18,7 +18,13 @@
 					
 			</el-table-column>
 		</el-table>
-		{{ textText }}
+		<el-pagination
+			class="text-center mt20"
+			layout="prev, pager, next"
+			@current-change="currentChange"
+			:total="1000">
+		</el-pagination>
+		{{ tableData }}
 	</div>
 </template>
 
@@ -43,7 +49,10 @@
 			return {
 			}
 		},
-		methods: {},
+		methods: {
+			currentChange ( currentPage ){
+			}
+		},
 		mounted() {
 			
 		},

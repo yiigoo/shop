@@ -56,48 +56,9 @@
 					</div>
 					
 				</el-header>
-				<el-header class="layout-page-nav" height="30px">
-					<div class="main-nav">
-						<ul>
-							<li class="active">商品列表</li>
-							<li>商品分类</li>
-							<li>优惠券</li>
-						</ul>
-					</div>
-					<div class="pull-right layout-pager">
-						页码：
-						<el-input-number 
-							size="small" 
-							v-model="num1" 
-							@change="handleChange" 
-							:min="1" 
-							:max="10" 
-							label="描述文字">
-						</el-input-number>
-					</div>
-				</el-header>
+				
 				<el-main class="layout-main" :style="{ height : mainHeight + 'px' }">
-					
-					<el-table
-						:data="tableData"
-						border
-						style="width: 100%">
-						<el-table-column
-							prop="date"
-							label="日期"
-							>
-						</el-table-column>
-						<el-table-column
-							prop="name"
-							label="姓名"
-							>
-						</el-table-column>
-						<el-table-column
-							prop="address"
-							label="地址">
-						</el-table-column>
-						</el-table>
-					<!-- <router-view></router-view> -->
+					<router-view></router-view>
 				</el-main>
 			</el-container>
 		</el-container>

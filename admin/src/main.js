@@ -11,7 +11,7 @@ import SiteTable from './components/siteTable.vue'
 Vue.prototype.$modal = Modal
 Vue.component('site-table', SiteTable)
 Vue.config.productionTip = false
-Vue.use(ElementUI)
+Vue.use(ElementUI, { size: 'small' })
 Vue.prototype.$utils = utils
 new Vue({
     el: '#app',

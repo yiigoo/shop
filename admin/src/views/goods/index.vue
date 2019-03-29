@@ -1,8 +1,21 @@
 <template>
 	<div>
-		<div @click="show">1111</div>
+		<el-header class="layout-page-nav" height="30px">
+			<div class="main-nav">
+				<ul>
+					<li class="active">商品列表</li>
+					<li>商品分类</li>
+					<li>优惠券</li>
+				</ul>
+			</div>
+		</el-header>
+
+		
+
 		<site-table
 			ref="table"
+			size="mini"
+			:action = "'api'"
 			:tableColumn = "tableColumn"
 			:text-text="true"
 			:tableData = "tableData">
@@ -15,12 +28,14 @@
 				 	@change="change( $event , cc.scope.$index )"
 					v-model="column.scope.row.date"
 					type="date"
+					size="mini"
 					value-format ="yyyy-MM-dd"
 					placeholder="选择日期">
 				</el-date-picker>
 			</div>
 
 		</site-table>
+		
 	</div>
 </template>
 
