@@ -73,7 +73,7 @@
 				new this.$modal( goodsDetail , {
 					title : name ,
 					width : '700px' ,
-					top : '0px' ,
+					top : '120px' ,
 					'show-close' : true ,
 					props: {
 						test : { a : 1 }
