@@ -12,6 +12,10 @@
 </template>
 
 <script>
+import Vue from 'vue';
+import { Dialog } from 'vant';
+
+Vue.use(Dialog);
 	export default {
 		data() {
 			return {
@@ -24,7 +28,12 @@
 		},
 		methods: {
 			confirm (value){
-				alert( value )
+				Dialog.alert({
+				title: '标题',
+				message: '弹窗内容'
+				}).then(() => {
+				// on close
+				});
 			}
 		}
 	}
