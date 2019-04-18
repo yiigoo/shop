@@ -17,19 +17,8 @@
 			:tableColumn = "tableColumn"
 			:text-text="true"
 			:tableData = "tableData">
-
 			<div slot="_opt" size="mini" slot-scope="column">
-				<el-button type="primary" @click="show( column.scope.row.name )">修改</el-button>
-			</div>
-			<div slot="date" slot-scope="column">
-				<el-date-picker
-				 	@change="change( $event , cc.scope.$index )"
-					v-model="column.scope.row.date"
-					type="date"
-					size="mini"
-					value-format ="yyyy-MM-dd"
-					placeholder="选择日期">
-				</el-date-picker>
+				<el-button type="primary" @click="show( column.scope.row , column.scope.$index )">修改</el-button>
 			</div>
 
 		</site-table>
@@ -69,17 +58,19 @@
 		},
 		
 		methods: {
-			show( name = '') {
+			show( item , index ) {
 				new this.$modal( goodsDetail , {
-					title : name ,
-					width : '700px' ,
-					top : '120px' ,
-					'show-close' : true ,
 					props: {
-						test : { a : 1 }
-					}
+						title : name ,
+						width : '700px' ,
+						top : '120px' ,
+						'show-close' : false ,
+					},
+					data: {
+						item : item
+					},
 				}, ( data ) => {
-					
+					item = data
 				})
 			},
 			change( value , index ){

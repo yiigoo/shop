@@ -16,7 +16,6 @@
 							{{ scope.row[item.prop] }} 
 						</slot>
 					</template>
-					
 			</el-table-column>
 		</el-table>
 		<el-pagination

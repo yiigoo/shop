@@ -1,6 +1,7 @@
 <template>
 	<div>
 		<el-dialog
+			 v-loading="loading"
 			:title="title"
 			:width="width"
 			:visible.sync="visible"
@@ -8,10 +9,15 @@
 			:show-close="showClose"
 			center>
 			<slot></slot>
-			<span slot="footer" class="dialog-footer">
-				<el-button type="primary">确定</el-button>
-				<el-button @click="visible = false">取消</el-button>
-			</span>
+			<div slot="footer" class="dialog-footer">
+				<el-button 
+					:type="btn.type || 'primary'"
+					v-for="(btn , index) in btns" 
+					@click="btn.click()"
+					:key="index">
+					{{ btn.label }}
+				</el-button>
+			</div>
 		</el-dialog>
 	</div>
 </template>
@@ -26,7 +32,7 @@
 			},
 			title : {
 				type: String ,
-				default : '80%'
+				default : '测试'
 			},
 			top : {
 				type: String ,
@@ -39,17 +45,20 @@
 		},
 		data() {
 			return {
-				visible : true ,
+				btns: [],
+				visible: true ,
+				loading: false
 			}
 		},
 		methods: {
-			setDefault( option = {} ) {
-				option.width && ( this.width = option.width )
-				option.title && ( this.title = option.title )
-				option.top &&  ( this.top = option.top )
-				if ( typeof option['show-close'] === 'boolean' ){
-					this.showClose = option['show-close']
-				}
+			hide() {
+				this.visible = !this.visible
+			},
+			setBtns(btns) {
+				this.btns = btns
+			},
+			toggleLoading() {
+				this.loading = !this.loading
 			}
 		},
 		beforeDestroy: function() {},
