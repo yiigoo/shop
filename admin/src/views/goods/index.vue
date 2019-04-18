@@ -61,7 +61,7 @@
 			show( item , index ) {
 				new this.$modal( goodsDetail , {
 					props: {
-						title : name ,
+						title : item.name ,
 						width : '700px' ,
 						top : '120px' ,
 						'show-close' : false ,
