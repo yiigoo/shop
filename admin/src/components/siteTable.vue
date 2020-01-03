@@ -21,6 +21,7 @@
 		<el-pagination
 			class="text-center mt20"
 			layout="prev, pager, next"
+			:current-page="page"
 			@current-change="currentChange"
 			:total="1000">
 		</el-pagination>
@@ -38,7 +39,7 @@
 			textText : {
 				type : Boolean ,
 				default : false
-			}
+			},
 		},
 		data() {
 			return {
@@ -48,7 +49,7 @@
 		},
 		methods: {
 			currentChange ( currentPage ){
-				this.getTable()
+				this.$router.push({query: {page: Number(currentPage)} })
 			} ,
 			getTable(){
 				this.loading = true
@@ -79,6 +80,12 @@
 		},
 		mounted() {
 			
+		},
+		computed: {
+			page() {
+				this.getTable()
+				return Number(this.$route.query.page || 1)
+			}
 		},
 		created() {
 			this.getTable()

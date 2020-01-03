@@ -2,9 +2,6 @@
 	<div>
 		<el-form ref="form" :model="form" label-width="140px">
 			<el-form-item label="名字">
-				<div class="add" @click="add">++++</div>
-			</el-form-item>
-			<el-form-item label="名字">
 				<el-input v-model="form.name"></el-input>
 			</el-form-item>
 			<el-form-item label="商品分类">
@@ -27,7 +24,6 @@
 </template>
 
 <script>
-	import goodsDetail2 from './goodsDetail2'
 	export default {
 		props : {
         // 默认查询参数
@@ -52,24 +48,6 @@
 			}
 		},
 		methods: {
-			add( item , index ) {
-				this.$modal( 
-					goodsDetail2 , {
-						props: {
-							title : '你的名字' ,
-							width : '500px' ,
-							top : '120px' ,
-							'show-close' : false ,
-						},
-						data: {
-							item: {}
-
-						},
-					}, ( data ) => {
-					}
-				)
-			},
-
 			submit() {
 				this.$root['modal'].toggleLoading()
 				

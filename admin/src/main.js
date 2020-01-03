@@ -8,7 +8,9 @@ import 'element-ui/lib/theme-chalk/index.css'
 import './styles/site.css'
 import Modal from './components/modal/index.js'
 import SiteTable from './components/siteTable.vue'
-Vue.prototype.$modal = Modal
+Vue.prototype.$modal = ( render , options ) =>{
+    return new Modal( render , options )
+}
 Vue.component('site-table', SiteTable)
 Vue.config.productionTip = false
 Vue.use(ElementUI, { size: 'small' })

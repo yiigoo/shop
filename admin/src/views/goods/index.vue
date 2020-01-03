@@ -10,6 +10,8 @@
 			</div>
 		</el-header>
 
+		
+
 		<site-table
 			ref="table"
 			size="mini"
@@ -59,27 +61,33 @@
 		
 		methods: {
 			show( item , index ) {
-				new this.$modal( goodsDetail , {
-					props: {
-						title : item.name ,
-						width : '700px' ,
-						top : '120px' ,
-						'show-close' : false ,
-					},
-					data: {
-						item : item
-					},
-				}, ( data ) => {
-					item = data
-				})
+				this.$modal( 
+					goodsDetail , {
+						props: {
+							title : item.name ,
+							width : '700px' ,
+							top : '120px' ,
+							'show-close' : false ,
+						},
+						data: {
+							item : item
+
+						},
+					}, ( data ) => {
+						console.log(data)
+						debugger
+						item.name = data.name
+					}
+				)
 			},
 			change( value , index ){
 			}
 		},
 		created() {
+
 		},
 		mounted() {
-			
+			debugger
 		}
 	}
 </script>
